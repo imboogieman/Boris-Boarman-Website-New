@@ -35,13 +35,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # Make sure this matches your actual build output directory
+          path: dist  # Ensure this matches your actual build output directory
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages  # Corrected environment syntax
+    environment: github-pages
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
